@@ -1,11 +1,7 @@
 from __future__ import absolute_import
 
-import os
-
 from molecule import logger
 from molecule.api import Driver
-from molecule.util import lru_cache
-from molecule.util import sysexit_with_message
 
 log = logger.get_logger(__name__)
 
@@ -17,7 +13,7 @@ class LXD(Driver):
     The class responsible for managing `LXD`_ containers.  `LXD`_ is not
     the default driver used in Molecule.
 
-    Molecule leverages Ansible's `docker_container`_ module, by mapping
+    Molecule leverages Ansible's `lxd_container`_ module, by mapping
     variables from ``molecule.yml`` into ``create.yml`` and ``destroy.yml``.
 
     .. _`docker_container`: https://docs.ansible.com/ansible/latest/docker_container_module.html

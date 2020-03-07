@@ -43,7 +43,7 @@ def test_command_init_scenario(temp_dir):
     with change_dir_to(role_directory):
         molecule_directory = pytest.helpers.molecule_directory()
         scenario_directory = os.path.join(molecule_directory, "test-scenario")
-        options = {"role_name": "test-init", "driver-name": "openstack"}
+        options = {"role_name": "test-init", "driver-name": "lxd"}
         cmd = sh.molecule.bake("init", "scenario", "test-scenario", **options)
         run_command(cmd)
 
