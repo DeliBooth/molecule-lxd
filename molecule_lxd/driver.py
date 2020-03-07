@@ -12,11 +12,16 @@ class LXD(Driver):
 
     The class responsible for managing `LXD`_ containers.  `LXD`_ is not
     the default driver used in Molecule.
+    
+    .. code-block:: yaml
+        driver:
+          name: lxd
 
     Molecule leverages Ansible's `lxd_container`_ module, by mapping
     variables from ``molecule.yml`` into ``create.yml`` and ``destroy.yml``.
 
     .. _`lxd_container`: https://docs.ansible.com/ansible/latest/lxd_container_module.html
+    .. _`LXD`: https://linuxcontainers.org/lxd/introduction/
     """  # noqa
 
     def __init__(self, config=None):
@@ -34,6 +39,10 @@ class LXD(Driver):
 
     def login_options(self, instance_name):
         return {"instance": instance_name}
+
+    @property
+    def safe_files(self):
+        return []
 
     def ansible_connection_options(self, instance_name):
         return {"ansible_connection": "lxd"}
