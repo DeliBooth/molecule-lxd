@@ -16,9 +16,7 @@ class LXD(Driver):
     Molecule leverages Ansible's `lxd_container`_ module, by mapping
     variables from ``molecule.yml`` into ``create.yml`` and ``destroy.yml``.
 
-    .. _`docker_container`: https://docs.ansible.com/ansible/latest/docker_container_module.html
-    .. _`Docker Security Configuration`: https://docs.docker.com/engine/reference/run/#security-configuration
-    .. _`Docker daemon socket options`: https://docs.docker.com/engine/reference/commandline/dockerd/#daemon-socket-option
+    .. _`lxd_container`: https://docs.ansible.com/ansible/latest/lxd_container_module.html
     """  # noqa
 
     def __init__(self, config=None):
